@@ -1,25 +1,19 @@
 Pod::Spec.new do |s|
   s.name         = "Salada"
-  s.version      = "1.1"
-  s.summary      = "Salada is OR Mapper for Firebase."
-  s.homepage     = "https://github.com/1amageek/Salada"
-  s.license      = { :type => "BSD" }
-  s.author    = "1amageek"
-  s.social_media_url   = "https://twitter.com/1amageek"
-  s.platform     = :ios
+  s.version      = "0.1.0"
+  s.summary      = "Salada is OR Mapper for Firebase. You can make architectures very easily."
+  s.description  = <<-DESC
+Salada is OR Mapper for Firebase. You can make architectures very easily.
+                   DESC
+  s.homepage     = "http://github.com/1amageek/Salada"
+  s.license      = { :type => "BSD", :file => "LICENSE" }
+  s.author             = { "1amageek" => "tmy0x3@icloud.com" } 
   s.ios.deployment_target = "8.0"
-  s.ios.framework = "UIKit"
-  #s.ios.vendored_frameworks = "SaladaFrameworks/*/Frameworks/*.framework"
+  s.source       = { :git => "http://github.com/giginet/Salada.git", :tag => "#{s.version}" }
+  s.source_files  = "Salada", "Salada/**/*.{h,m,swift}"
+  #s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
-  #s.source       = { :http => "https://github.com//1amageek/Salada/releases/download/1.0/SaladaFrameworks.zip" }
-  s.source	 = { :git => "https://github.com/1amageek/Salada.git", :tag => "#{s.version}" } 
-
-  s.source_files = "Salada/**/*.swift"
-  s.dependency "Firebase/Database"
+  s.dependency "Firebase/Core"
   s.dependency "Firebase/Storage"
-
-  #s.xcconfig = {
-  #  "FRAMEWORK_SEARCH_PATHS" => "'$(PODS_ROOT)/FirebaseDatabase' '$(PODS_ROOT)/FirebaseStorage'"
-  #}
-
+  s.dependency "Firebase/Database"
 end
